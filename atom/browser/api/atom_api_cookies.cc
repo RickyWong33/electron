@@ -223,8 +223,8 @@ void OnSetCookie(util::Promise promise,
     RunCallbackInUI(
         base::BindOnce(util::Promise::ResolveEmptyPromise, std::move(promise)));
   } else {
-    RunCallbackInUI(
-        base::BindOnce(util::Promise::RejectPromise, std::move(promise), errmsg));
+    RunCallbackInUI(base::BindOnce(util::Promise::RejectPromise,
+                                   std::move(promise), errmsg));
   }
 }
 
